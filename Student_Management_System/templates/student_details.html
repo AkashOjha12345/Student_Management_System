@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Student Details{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+<div class="card-header bg-primary text-white">
+
+<h3>{{ student.full_name }}</h3>
+
+</div>
+
+<div class="card-body">
+
+<p><strong>ID:</strong> {{ student.student_id }}</p>
+
+<p><strong>Age:</strong> {{ student.age }}</p>
+
+<p><strong>Course:</strong> {{ student.course }}</p>
+
+<p><strong>Department:</strong> {{ student.department }}</p>
+
+<p><strong>Email:</strong> {{ student.email }}</p>
+
+<p><strong>Phone:</strong> {{ student.phone }}</p>
+
+<p><strong>Address:</strong> {{ student.address }}</p>
+
+<p><strong>Marks:</strong> {{ student.marks }}</p>
+
+<p><strong>Attendance:</strong> {{ student.attendance }}%</p>
+
+<p><strong>Grade:</strong> {{ student.calculate_grade() }}</p>
+
+</div>
+
+</div>
+
+{% endblock %}

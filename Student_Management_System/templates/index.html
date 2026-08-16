@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+
+    <img src="{{ url_for('static', filename='images/group.png') }}" alt="Group" class="img-fluid mb-4" style="max-width: 220px;">
+
+    <h1 class="display-4 mt-3">
+        🎓 Student Management System
+    </h1>
+
+    <p class="lead">
+        Manage student records quickly and efficiently using Flask.
+    </p>
+
+    <hr>
+
+    <!-- Dashboard Statistics -->
+    <div class="row mt-4">
+
+        <div class="col-md-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h5>Total Students</h5>
+                    <h2>{{ total }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h5>Average Marks</h5>
+                    <h2>{{ average }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h5>Top Performer</h5>
+
+                    {% if topper %}
+                        <h5>{{ topper.full_name }}</h5>
+                        <p>{{ topper.marks }} Marks</p>
+                    {% else %}
+                        <p>No Students</p>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Main Menu -->
+    <div class="row mt-5">
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+
+                    <h3>Add Student</h3>
+
+                    <p>Create a new student record.</p>
+
+                    <a href="/add-student" class="btn btn-success">
+                        Add Student
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+
+                    <h3>Students</h3>
+
+                    <p>View all registered students.</p>
+
+                    <a href="/students" class="btn btn-primary">
+                        View Students
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+
+                    <h3>Search</h3>
+
+                    <p>Search student by ID or Name.</p>
+
+                    <a href="/search" class="btn btn-warning">
+                        Search Student
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

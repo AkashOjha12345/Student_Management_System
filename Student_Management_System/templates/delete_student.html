@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Student{% endblock %}
+
+{% block content %}
+
+<div class="alert alert-danger">
+
+<h3>Delete Student</h3>
+
+<p>
+
+Are you sure you want to delete
+
+<strong>{{ student.full_name }}</strong>?
+
+</p>
+
+<form method="POST">
+
+<button class="btn btn-danger">
+Yes, Delete
+</button>
+
+<a href="/students" class="btn btn-secondary">
+Cancel
+</a>
+
+</form>
+
+</div>
+
+{% endblock %}
